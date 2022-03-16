@@ -60,7 +60,7 @@ export default function Education(props) {
                             onChange={handleEdu}
                         />
                      
-                        <DeleteForeverIcon fontSize='large' onClick={() => removeEdu(item.id)}></DeleteForeverIcon>
+                        <DeleteForeverIcon fontSize='large' cursor='pointer' onClick={() => removeEdu(item.id)}></DeleteForeverIcon>
                     </Box>
 
                 )

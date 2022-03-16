@@ -68,7 +68,7 @@ export default function Experience(props) {
                                 onChange={handleYears}
                                 type='number'
                             />
-                            <DeleteForeverIcon fontSize='large' onClick={() => removeExp(item.id)}></DeleteForeverIcon>
+                            <DeleteForeverIcon fontSize='large' cursor='pointer' onClick={() => removeExp(item.id)}></DeleteForeverIcon>
                         </Box>
 
                     )
@@ -109,13 +109,13 @@ export default function Experience(props) {
                     <Box sx={{ mb: '10px', display: 'flex', flexDirection:'column' }}>
                     <Typography variant='h5' mb={'20px'}>Workplace</Typography>
                     {exp.map(item => {
-                    if (item.experience !== '')
+                    if (item.experience !== ''){
                         return (
                                     <Box sx={{ mb: '10px'}}>
                                         <Typography color={'rgb(100, 100, 100)'} sx={{ ml: "15px" }} variant='h5'>{item.experience}</Typography>
                                     </Box>
-
-                        )
+                    
+                        )}
                 })}
                     </Box>
                     <Divider orientation="vertical" flexItem />

@@ -2,6 +2,7 @@
   "name": "cv_creator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://daimonke.github.io/cv_creator",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -19,6 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

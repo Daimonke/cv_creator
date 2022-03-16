@@ -14,6 +14,7 @@ export default function PersonInfo(props) {
     const handleAge = (e) => setAge(e.target.value)
     const [email, setEmail] = React.useState('');
     const handleEmail = (e) => setEmail(e.target.value)
+    const blankInput = (par) => par === '' ? '-' : par
 
 
     if (props.alignment === 'edit') {
@@ -104,10 +105,10 @@ export default function PersonInfo(props) {
                         gap: 1,
                         overflow: 'hidden'
                     }}>
-                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{name}</Typography>
-                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{surname}</Typography>
-                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{age}</Typography>
-                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{email}</Typography>
+                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{blankInput(name)}</Typography>
+                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{blankInput(surname)}</Typography>
+                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{blankInput(age)}</Typography>
+                <Typography variant='h6' color={'rgb(100, 100, 100)'}>{blankInput(email)}</Typography>
                 </Box>
                 </Box>
                 <Divider sx={{ mb: '20px' }}></Divider>

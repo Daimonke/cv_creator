@@ -24,6 +24,7 @@ export default function Experience(props) {
     const removeExp = (id) => {
         setExp(exp.filter(item => item.id !== id))
     }
+    const blankInput = (par) => par === '' ? '-' : par
     if (props.alignment === 'edit') {
         return (
             <div>
@@ -109,10 +110,10 @@ export default function Experience(props) {
                     <Box sx={{ mb: '10px', display: 'flex', flexDirection:'column' }}>
                     <Typography variant='h5' mb={'20px'}>Workplace</Typography>
                     {exp.map(item => {
-                    if (item.experience !== ''){
+                    if (item.experience !== '' || item.years !== ''){
                         return (
                                     <Box sx={{ mb: '10px'}}>
-                                        <Typography color={'rgb(100, 100, 100)'} sx={{ ml: "15px" }} variant='h5'>{item.experience}</Typography>
+                                        <Typography color={'rgb(100, 100, 100)'} sx={{ ml: "15px" }} variant='h5'>{blankInput(item.experience)}</Typography>
                                     </Box>
                     
                         )}
@@ -122,10 +123,10 @@ export default function Experience(props) {
                     <Box sx={{ mb: '10px', display: 'flex', alignItems: 'center', flexDirection:'column' }}>
                     <Typography variant='h5' mb={'20px'}>Years</Typography>
                     {exp.map(item => {
-                    if (item.experience !== '')
+                    if (item.experience !== '' || item.years !== '')
                         return (         
                                     <Box sx={{ mb: '10px', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                                        <Typography color={'rgb(100, 100, 100)'} sx={{ ml: "15px" }} variant='h5'>{item.years}</Typography>
+                                        <Typography color={'rgb(100, 100, 100)'} sx={{ ml: "15px" }} variant='h5'>{blankInput(item.years)}</Typography>
                                     </Box>
 
                         )

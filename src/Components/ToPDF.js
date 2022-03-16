@@ -20,7 +20,11 @@ export default class FormContainer extends React.PureComponent {
         >
           <ReactToPrint
             trigger={() => {
-              return <Button variant="contained" color="error">Print</Button>
+              if(this.props.alignment === 'edit'){
+              return <Button variant="contained" color="error" disabled>Print</Button>
+              } else {
+                return <Button variant="contained" color="error">Print</Button>
+              }
             }}
             content={() => this.componentRef}
           />

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Divider } from '@mui/material';
 import TextField from '@mui/material/TextField';
@@ -9,27 +8,22 @@ import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import '../App.css';
 
-export default function Education() {
+export default function Education(props) {
 
     const [edu, setEdu] = React.useState([{id: 0, education: ''}]);
     const handleEdu = (e) => {
-        console.log(edu)
-
         setEdu([...edu], edu[e.target.id].education = e.target.value)
     }
 
     const addEdu = (e) => {
-        console.log(edu)
-        if (edu.length == 0) setEdu([{ id: 0, education: '' }])
+        if (edu.length === 0) setEdu([{ id: 0, education: '' }])
         else setEdu([...edu, { id: edu[edu.length - 1].id + 1, education: '' }])
     }
     const removeEdu = (id) => {
-        // console.log(index)
-        setEdu(edu.filter(item => item.id != id))
-        console.log(edu)
+        setEdu(edu.filter(item => item.id !== id))
     }
 
-
+    if(props.alignment === 'edit'){
   return (
     <div>
         <Box
@@ -86,5 +80,39 @@ export default function Education() {
             </Box>
             <Divider sx={{ mb: '20' }}></Divider>
     </div>
-  )
+  )} if(props.alignment === 'preview'){
+      return (
+          <div>
+             <Box
+                sx={{
+                    mb: '20px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: 3
+                }}
+            >
+                <Typography variant='h5'>Education</Typography>
+            </Box>
+            <ol>
+            {edu.map(item => {
+                if(item.education !== '')
+                return (
+                    
+                    <Box
+                    sx={{
+                        mb: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}
+                >
+                <Typography sx={{ml:"15px"}} variant='h5' color={'rgb(100, 100, 100)'}><li>{item.education}</li></Typography>
+                </Box>
+                
+                )}
+            )}
+            </ol>
+          </div>
+      )
+  }
 }

@@ -1,23 +1,30 @@
 
 import React from 'react';
 import ReactToPrint from 'react-to-print';
-import ComponentToPrint  from './CvForm';
+import ComponentToPrint from './CvForm';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
-export default class Example extends React.PureComponent {
+export default class FormContainer extends React.PureComponent {
   render() {
-
     return (
-      <div>
-        <ReactToPrint
-          trigger={() => {
-            // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
-            // to the root node of the returned component as it will be overwritten.
-            return <a href="#">Print this out!</a>;
-          }}
-          content={() => this.componentRef}
-        />
-    <ComponentToPrint ref={el => (this.componentRef = el)} />
+      <div >
+        <ComponentToPrint alignment={this.props.alignment} ref={el => (this.componentRef = el)} ></ComponentToPrint>
 
+        <Box
+          sx={{
+            mt: '20px',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <ReactToPrint
+            trigger={() => {
+              return <Button variant="contained" color="error">Print</Button>
+            }}
+            content={() => this.componentRef}
+          />
+        </Box>
       </div>
     );
   }

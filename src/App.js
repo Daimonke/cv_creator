@@ -5,7 +5,7 @@ import { ToggleButton } from '@mui/material';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './App.css';
 import * as React from 'react';
-import CvForm from './Components/CvForm';
+import FormContainer from './Components/ToPDF';
 
 function App() {
   const [alignment, setAlignment] = React.useState('edit');
@@ -36,7 +36,7 @@ function App() {
         <Divider />
         </Container>
       <Container className='main'>
-      <CvForm></CvForm>
+      <FormContainer alignment={alignment} ></FormContainer>
       </Container>
       </Container>
     </div>

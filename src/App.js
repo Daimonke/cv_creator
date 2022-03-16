@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='wrapper'>
       <Container maxWidth='sm' sx={{
-        backgroundColor: 'rgb(220, 220, 220)', borderRadius: '10px', minHeight: '90vh',
+        backgroundColor: 'rgb(220, 220, 220)', borderRadius: '10px', minHeight: '90vh', maxHeight: '100%',
         margin: '5vh auto 5vh auto', boxShadow: 'rgba(214, 230, 237, 0.12) 0px 2px 4px 0px, rgba(214, 230, 237, 0.32) 0px 2px 16px 0px;', padding: '10px'
       }}>
         <Container className='header' sx={{ display: 'flex', flexDirection: 'column'}}>

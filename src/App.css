@@ -5,11 +5,8 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
   max-height: fit-content;
 }
-
-
 
 /* Remove number input increment arrows */
 input[type="number"] {

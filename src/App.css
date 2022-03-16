@@ -1,16 +1,10 @@
 body {
   margin: 0;
   background-color: rgb(46, 46, 46);
+  padding: 5vh 2vh 5vh 2vh;
 }
 
 .wrapper {
-  background-color: rgb(46, 46, 46);
-  position: absolute;
-  padding: 0 2vh 0 2vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   min-height: 100vh;
   max-height: fit-content;
 }
